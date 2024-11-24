@@ -25,4 +25,12 @@ public class GameManager : MonoBehaviour
     {
         lifes--;
     }
+    public void CoinPick()
+    {
+        score += 10;
+    }
+    public void PillPick()
+    {
+        lifes++;
+    }
 }
