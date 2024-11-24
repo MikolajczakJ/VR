@@ -3,16 +3,16 @@
 ## Dokumentacja wstępna
 
 ### Opis projektu
-> Opis tutaj
+> Gra VR typu endless runner, w której gracz wciela się w postać poruszającą się po niekończącym się torze pełnym przeszkód, zbiera punkty, zdobywa ulepszenia oraz korzysta z różnorodnej broni do niszczenia przeszkód. Rozgrywka opiera się na szybkim refleksie i strategicznym zarządzaniu zasobami. Kluczowymi elementami są immersyjne doświadczenie VR oraz różnorodność mechanik, które utrzymują zaangażowanie gracza.
 ### Uzasadnienie zastosowania wybranej technologii
-> - Arg1
-> - Arg2
+> - VR jako medium dla pełnej immersji: Dzięki wykorzystaniu VR gracz może całkowicie zanurzyć się w świecie gry, co zwiększa intensywność doznań i angażuje użytkownika na głębszym poziomie w porównaniu do tradycyjnych gier.
+> - Unity jako silnik gry: Unity oferuje zaawansowane narzędzia do tworzenia gier VR, w tym łatwą integrację z popularnymi headsetami VR, wsparcie dla fizyki oraz optymalizację grafiki, co pozwala na stworzenie dynamicznego i atrakcyjnego wizualnie świata.
 ### Potencjalne cele do stworzenia systemu
 > - cel1
 > - cel2
 ### Potencjali odbiorcy
-> - grupa1
-> - grupa2
+> - Gracze VR poszukujący szybkiej, dynamicznej rozgrywki z wysokim poziomem immersji.
+> - Fani gier endless runner, którzy szukają nowych doświadczeń w rozszerzonej rzeczywistości wirtualnej.
 ### Przykładyszczególnej wartości i użyteczności dla użytkowników dostarczonych przez projekt (?)
 > - przykład1
 > - przykład2
