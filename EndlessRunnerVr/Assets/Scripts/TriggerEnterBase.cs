@@ -11,6 +11,7 @@ public class TriggerEnterBase : MonoBehaviour
     protected virtual void Interact(Collider other)
     {
         Debug.Log(other.gameObject);
+        gameObject.SetActive(false);
     }
 }
 

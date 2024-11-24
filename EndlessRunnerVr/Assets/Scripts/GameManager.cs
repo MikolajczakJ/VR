@@ -6,7 +6,9 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     [SerializeField] float score;
+    [SerializeField] float spawnInterval;
     [SerializeField] byte lifes;
+    [SerializeField] Spawner spawner;
     public float Score { get => score; }
     public float Lifes { get => lifes; }
 
@@ -14,9 +16,22 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         Instance = this;
+        StartCoroutine(SpawnRoutine());
     }
-
-    // Update is called once per frame
+    IEnumerator SpawnRoutine()
+    {
+        if (spawner == null)
+        {
+            yield return null;
+            yield break;
+        }
+        while (true)
+        {
+            spawner.Spawn();
+            yield return new WaitForSeconds(spawnInterval);
+        }
+    }
+        // Update is called once per frame
     void Update()
     {
           score += Time.deltaTime;
