@@ -38,7 +38,16 @@ public class Spawner : MonoBehaviour
         {
             GameObject spawned = pool.Dequeue();
             spawned.SetActive(true);
-            spawned.transform.position = Vector3.Lerp(spawnPoint1.position, spawnPoint2.position, UnityEngine.Random.Range(0,1f)) ;
+            if (tag.ToLower() == "barrier")
+            {
+                spawned.transform.position =new Vector3(78.31f,0,0);
+            }
+            else
+            {
+                spawned.transform.position = Vector3.Lerp(spawnPoint1.position, spawnPoint2.position, UnityEngine.Random.Range(0,1f)) ;
+
+            }
+
             pool.Enqueue(spawned);
         }
     }
