@@ -39,6 +39,7 @@ public class Spawner : MonoBehaviour
             GameObject spawned = pool.Dequeue();
             spawned.SetActive(true);
             spawned.transform.position = Vector3.Lerp(spawnPoint1.position, spawnPoint2.position, UnityEngine.Random.Range(0,1f)) ;
+            pool.Enqueue(spawned);
         }
     }
     // Update is called once per frame
