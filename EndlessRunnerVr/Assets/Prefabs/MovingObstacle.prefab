@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 103261777628278915}
   - component: {fileID: 6854654878529082939}
   m_Layer: 6
-  m_Name: Obstacle
+  m_Name: MovingObstacle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -160,6 +160,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speedVector: {x: -10, y: 0, z: 0}
-  moveHorizontally: 0
+  moveHorizontally: 1
   horizontalRange: 5
   horizontalSpeed: 3

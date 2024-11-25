@@ -2793,7 +2793,7 @@ GameObject:
   - component: {fileID: 1869904263}
   - component: {fileID: 1869904262}
   m_Layer: 0
-  m_Name: Side (1)
+  m_Name: Walls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2940,6 +2940,14 @@ MonoBehaviour:
   - prefab: {fileID: 2150736746646193571, guid: 63e7a420bc753a0438e2faf81022bacc,
       type: 3}
     tag: Barrier
+    InitialPoolSize: 10
+  - prefab: {fileID: 8423919277998178382, guid: b261ac3531bee43469a179c16e00317f,
+      type: 3}
+    tag: MovingWall
+    InitialPoolSize: 10
+  - prefab: {fileID: 6649731601530399303, guid: c5389fd5189e22047a9b8bd1fa581295,
+      type: 3}
+    tag: MovingObstacle
     InitialPoolSize: 10
 --- !u!4 &1895079368
 Transform:
