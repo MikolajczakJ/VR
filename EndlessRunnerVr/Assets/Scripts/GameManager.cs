@@ -1,6 +1,8 @@
 using System.Collections;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement; // Potrzebne do za³adowania sceny
+using UnityEngine.UI; // Do kontrolowania UI
 
 public class GameManager : MonoBehaviour
 {
@@ -12,6 +14,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Spawner spawner;
     [SerializeField] private GameObject redWall;
     [SerializeField] private TextMeshProUGUI gameOverText; // Dla TextMeshPro
+    [SerializeField] private GameObject player;
+    [SerializeField] private Button playAgainButton; // Przycisk "Play Again"
+    [SerializeField] private Vector3 startPosition; // Pocz¹tkowa pozycja gracza
 
 
     public float Score { get => score; }
@@ -20,15 +25,19 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         Instance = this;
-        if (redWall != null)
-        {
-            redWall.SetActive(false);
-        }
-        if (gameOverText != null)
-        {
-            gameOverText.gameObject.SetActive(false);
-        }
+        playAgainButton.gameObject.SetActive(false); // Przyciski ukryte na pocz¹tku
+        ResetGame();  // Zresetuj grê na pocz¹tku
         StartCoroutine(SpawnRoutine());
+    }
+    public void ResetGame()
+    {
+        lifes = 1;
+        score = 0;
+        redWall.SetActive(false); // Ukryj czerwon¹ œcianê
+        gameOverText.gameObject.SetActive(false); // Ukryj napis Game Over
+        Time.timeScale = 1; // Przywróæ normalny czas
+        player.transform.position = startPosition; // Reset pozycji gracza
+        playAgainButton.gameObject.SetActive(false); // Ukryj przycisk na pocz¹tku
     }
 
     IEnumerator SpawnRoutine()
@@ -49,32 +58,39 @@ public class GameManager : MonoBehaviour
     {
         score += Time.deltaTime;
     }
-
     public void ReduceLife()
     {
         lifes--;
-        Debug.Log("Lives left: " + lifes);
-
         if (lifes <= 0)
         {
             lifes = 0;
-            Debug.Log("Game Over! Activating red wall.");
-            if (redWall != null)
-            {
-                redWall.SetActive(true);
-            }
-            if (gameOverText != null)
-            {
-                gameOverText.text = "GAME OVER\nScore: " + Mathf.FloorToInt(score);
-                gameOverText.gameObject.SetActive(true);
-                Debug.Log("Game Over text activated!");
-            }
-            else
-            {
-                Debug.LogError("Game Over Text is not assigned!");
-            }
-            Time.timeScale = 0; // Zatrzymanie gry
+            ShowGameOver();
         }
+    }
+    public void ShowGameOver()
+    {
+        if (redWall != null)
+        {
+            redWall.SetActive(true);
+            Vector3 playerPosition = player.transform.position; // Pozycja gracza
+            redWall.transform.position = new Vector3(playerPosition.x, 3.2f, playerPosition.z); // Ustaw œcianê w miejscu gracza
+        }
+        if (gameOverText != null)
+        {
+            gameOverText.text = "GAME OVER\nScore: " + Mathf.FloorToInt(score);
+            gameOverText.gameObject.SetActive(true);
+        }
+        Time.timeScale = 0; // Zatrzymanie gry
+        
+        playAgainButton.onClick.AddListener(PlayAgain); // Dodaj funkcjê do przycisku
+        playAgainButton.gameObject.SetActive(true); // Poka¿ przycisk "PLAY AGAIN"
+    }
+    private void PlayAgain()
+    {
+        playAgainButton.gameObject.SetActive(false); // Ukryj przycisk
+        ResetGame(); // Zresetuj grê
+        Time.timeScale = 1; // Przywróæ normalny czas
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void CoinPick()

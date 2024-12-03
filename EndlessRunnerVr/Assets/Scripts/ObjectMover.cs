@@ -6,12 +6,17 @@ public class ObjectMover : MonoBehaviour
 {
     [SerializeField] Vector3 speedVector;
     [SerializeField] bool moveHorizontally;
-    [SerializeField] private float horizontalRange = 5f; 
-    [SerializeField] private float horizontalSpeed = 2f; 
+    [SerializeField] private float horizontalRange = 5f;
+    [SerializeField] private float horizontalSpeed = 2f;
 
-    private bool movingRight = true; 
-    private Vector3 startPosition;  
-    // Update is called once per frame
+    private bool movingRight = true;
+    private Vector3 startPosition;
+
+    void Start()
+    {
+        startPosition = transform.position;
+    }
+
     void Update()
     {
         transform.Translate(speedVector * Time.deltaTime);
@@ -29,11 +34,11 @@ public class ObjectMover : MonoBehaviour
 
         if (currentZ <= leftBoundary)
         {
-            movingRight = true; 
+            movingRight = true;
         }
         else if (currentZ >= rightBoundary)
         {
-            movingRight = false; 
+            movingRight = false;
         }
 
         float horizontalDirection = movingRight ? 1 : -1;
