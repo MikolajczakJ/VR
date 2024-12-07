@@ -17,6 +17,6 @@ public class DisplayScore : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        m_textMeshPro.text = $"Score: {Math.Round((decimal)GameManager.Instance?.Score,0)}\nLifes: {GameManager.Instance?.Lifes}";
+        m_textMeshPro.text = $"Score: {Math.Round((decimal)GameManager.Instance?.Score,0)}\nLifes: {GameManager.Instance?.Lifes}\nAmmo: {GameManager.Instance?.currentAmmo}/{GameManager.Instance?.magSize}";
     }
 }

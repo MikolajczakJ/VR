@@ -17,6 +17,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject player;
     [SerializeField] private Button playAgainButton; // Przycisk "Play Again"
     [SerializeField] private Vector3 startPosition; // Pocz¹tkowa pozycja gracza
+    [SerializeField] public int currentAmmo;
+    [SerializeField] public int magSize;
+    [SerializeField] public int maxDistance;
 
 
     public float Score { get => score; }
@@ -31,8 +34,7 @@ public class GameManager : MonoBehaviour
     }
     public void ResetGame()
     {
-        lifes = 1;
-        score = 0;
+        score =5;
         redWall.SetActive(false); // Ukryj czerwon¹ œcianê
         gameOverText.gameObject.SetActive(false); // Ukryj napis Game Over
         Time.timeScale = 1; // Przywróæ normalny czas
@@ -100,6 +102,15 @@ public class GameManager : MonoBehaviour
 
     public void PillPick()
     {
+        //Random pill tutaj
+        currentAmmo = 5;
+
         lifes++;
+    }
+    public void UseBullet()
+    {
+        if (currentAmmo > 0) {
+            currentAmmo--;
+        }
     }
 }

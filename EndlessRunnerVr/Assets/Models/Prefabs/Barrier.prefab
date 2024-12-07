@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 433872190868821211}
   m_Layer: 6
   m_Name: Barrier
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -121,6 +121,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speedVector: {x: -10, y: 0, z: 0}
+  moveHorizontally: 0
+  horizontalRange: 5
+  horizontalSpeed: 2
 --- !u!114 &6862825634309359043
 MonoBehaviour:
   m_ObjectHideFlags: 0
