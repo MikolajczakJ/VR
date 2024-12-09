@@ -32,6 +32,7 @@ public class Spawner : MonoBehaviour
     }
     public void Spawn()
     {
+        Debug.Log("Attempting to spawn...");
         int numb = UnityEngine.Random.Range(0, pools.Count);
         string  tag = pools[numb].tag;
         if (poolDict.TryGetValue(tag, out Queue<GameObject> pool))
@@ -49,8 +50,25 @@ public class Spawner : MonoBehaviour
             }
 
             pool.Enqueue(spawned);
+            Debug.Log($"Spawned object with tag: {tag}");
+        }
+        else
+        {
+            Debug.LogWarning($"No pool found for tag: {tag}");
         }
     }
+    public void ResetSpawner()
+{
+    foreach (var pool in poolDict)
+    {
+        foreach (var obj in pool.Value)
+        {
+            obj.SetActive(false); // Ustaw wszystkie obiekty jako nieaktywne
+        }
+    }
+    Debug.Log("Spawner reset.");
+}
+
     // Update is called once per frame
     void Update()
     {

@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] public int magSize;
     [SerializeField] public int maxDistance;
 
+    private Coroutine spawnCoroutine; // Referencja do Coroutine
 
     public float Score { get => score; }
     public float Lifes { get => lifes; }
@@ -30,7 +31,7 @@ public class GameManager : MonoBehaviour
         Instance = this;
         playAgainButton.gameObject.SetActive(false); // Przyciski ukryte na pocz¹tku
         ResetGame();  // Zresetuj grê na pocz¹tku
-        StartCoroutine(SpawnRoutine());
+        //StartCoroutine(SpawnRoutine());
     }
     public void ResetGame()
     {
@@ -40,20 +41,33 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1; // Przywróæ normalny czas
         player.transform.position = startPosition; // Reset pozycji gracza
         playAgainButton.gameObject.SetActive(false); // Ukryj przycisk na pocz¹tku
+
+        spawner.ResetSpawner(); // Zresetuj spawner
+        // Uruchomienie spawnowania od nowa
+        if (spawnCoroutine != null)
+        {
+            StopCoroutine(spawnCoroutine); // Zatrzymaj poprzedni¹ Coroutine
+        }
+        spawnCoroutine = StartCoroutine(SpawnRoutine()); // Rozpocznij now¹ Coroutine
+        Debug.Log("SpawnRoutine restarted.");
     }
 
     IEnumerator SpawnRoutine()
     {
+        Debug.Log("SpawnRoutine started.");
         if (spawner == null)
         {
-            yield return null;
+            Debug.LogWarning("Spawner is null!");
+            //yield return null;
             yield break;
         }
         while (lifes > 0)
         {
+            Debug.Log("Spawning...");
             spawner.Spawn();
             yield return new WaitForSeconds(spawnInterval);
         }
+        Debug.Log("SpawnRoutine ended.");
     }
 
     void Update()
@@ -63,6 +77,7 @@ public class GameManager : MonoBehaviour
     public void ReduceLife()
     {
         lifes--;
+        Debug.Log($"Life decreased, current lifes: {lifes}");
         if (lifes <= 0)
         {
             lifes = 0;
@@ -90,9 +105,8 @@ public class GameManager : MonoBehaviour
     private void PlayAgain()
     {
         playAgainButton.gameObject.SetActive(false); // Ukryj przycisk
-        ResetGame(); // Zresetuj grê
-        Time.timeScale = 1; // Przywróæ normalny czas
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        playAgainButton.onClick.RemoveAllListeners(); // Usuñ wszystkie eventy z przycisku
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name); // Prze³aduj scenê
     }
 
     public void CoinPick()
