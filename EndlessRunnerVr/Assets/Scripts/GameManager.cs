@@ -35,7 +35,7 @@ public class GameManager : MonoBehaviour
     }
     public void ResetGame()
     {
-        score =5;
+        lifes = 5;
         redWall.SetActive(false); // Ukryj czerwon¹ œcianê
         gameOverText.gameObject.SetActive(false); // Ukryj napis Game Over
         Time.timeScale = 1; // Przywróæ normalny czas

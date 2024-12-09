@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5755842166281081283}
   - component: {fileID: 2729499795669910770}
   - component: {fileID: 1053359150024538249}
+  - component: {fileID: -8840940513533767242}
   - component: {fileID: 5395233333935831580}
   - component: {fileID: -4697164337793566764}
   m_Layer: 6
@@ -122,6 +123,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44d9f5bcaa80f544c8fbf6b22c39c45d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pickupEffect: {fileID: 3353183847371993556, guid: 6933f432c6636664bb3447c598a07963,
+    type: 3}
+--- !u!114 &-8840940513533767242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9148326997144734382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c107c7093a0898468a4aa49f317dc0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectRenderer: {fileID: 0}
+  glowColor: {r: 1, g: 0.3695826, b: 0.2971698, a: 1}
+  glowSpeed: 2
 --- !u!54 &5395233333935831580
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -162,3 +180,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speedVector: {x: -10, y: 0, z: 0}
+  moveHorizontally: 0
+  horizontalRange: 5
+  horizontalSpeed: 2

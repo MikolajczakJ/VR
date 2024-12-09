@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 5060797321378222135}
   - component: {fileID: 3744020750655008919}
   - component: {fileID: -6993658848498472616}
+  - component: {fileID: 119152655415191828}
   m_Layer: 6
   m_Name: Coin
   m_TagString: Untagged
@@ -149,6 +150,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b5b40930290bbe4ebb4a2eb1ab85f1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pickupEffect: {fileID: 5006960905132938416, guid: 60d7a9dc4c4898f449bc9d3a27b3f3a5,
+    type: 3}
 --- !u!114 &-6993658848498472616
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -165,3 +168,18 @@ MonoBehaviour:
   moveHorizontally: 0
   horizontalRange: 5
   horizontalSpeed: 2
+--- !u!114 &119152655415191828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7164718656979560942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c107c7093a0898468a4aa49f317dc0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectRenderer: {fileID: 0}
+  glowColor: {r: 0.990566, g: 0.9354614, b: 0.3224012, a: 1}
+  glowSpeed: 2
