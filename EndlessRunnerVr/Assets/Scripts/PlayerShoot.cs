@@ -11,7 +11,7 @@ public class PlayerShoot : MonoBehaviour
 
     private void Update()
     {   
-        if (Input.GetMouseButton(0) && GameManager.Instance)
+        if (Input.GetMouseButtonDown(0) && GameManager.Instance)
         {
             int currentAmmo = GameManager.Instance.currentAmmo;
             GameManager.Instance.UseBullet();
@@ -23,6 +23,7 @@ public class PlayerShoot : MonoBehaviour
                 if (hitInfo.collider.tag == "Obstacle" && currentAmmo > 0)
                 {
                     hitInfo.transform.gameObject.SetActive(false);
+
                 }
             }
         }
