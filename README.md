@@ -4,7 +4,7 @@
 
 ### Opis projektu
 
-> Gra VR typu endless runner, w której gracz wciela się w postać poruszającą się po niekończącym się torze pełnym przeszkód, zbiera punkty, zdobywa ulepszenia oraz korzysta z różnorodnej broni do niszczenia przeszkód. Rozgrywka opiera się na szybkim refleksie i strategicznym zarządzaniu zasobami. Kluczowymi elementami są immersyjne doświadczenie VR oraz różnorodność mechanik, które utrzymują zaangażowanie gracza.
+> Gra VR typu endless runner, w której gracz wciela się w postać poruszającą się po niekończącym się torze pełnym przeszkód, zbiera punkty, zdobywa monety i pigułki oraz korzysta z broni do niszczenia przeszkód. Rozgrywka opiera się na szybkim refleksie i strategicznym zarządzaniu zasobami. Kluczowym elementem jest immersyjne doświadczenie VR, które utrzymuje zaangażowanie gracza.
 
 ### Uzasadnienie zastosowania wybranej technologii
 
@@ -20,13 +20,13 @@
 >   - zbieranie zasobów (piguł zwiększających liczbę żyć i amunicję)
 >   - strzelanie do przeszkód z użyciem broni
 
-### Potencjali odbiorcy
+### Potencjalni odbiorcy
 
 > - Gracze VR poszukujący szybkiej, dynamicznej rozgrywki z wysokim poziomem immersji.
 > - Fani gier endless runner, którzy szukają nowych doświadczeń w rozszerzonej rzeczywistości wirtualnej.
 > - Twórcy treści (streamerzy, youtuberzy), dla których gra może być atrakcyjna jako materiał do publikacji dzięki dynamicznej i efektownej rozgrywce.
 
-### Przykłady szczególnej wartości i użyteczności dla użytkowników dostarczonych przez projekt (?)
+### Przykłady szczególnej wartości i użyteczności dla użytkowników dostarczonych przez projekt
 
 > - Immersyjne doświadczenia VR - dzięki zastosowaniu narzędzia XR Interaction Toolkit, użytkownicy mogą cieszyć się wyjątkowym poziomem immersji.
 > - Krótka, dynamiczna rozgrywka - dobra forma relaksu lub szybka rozgrywka w przerwach między innymi aktywnościami.
@@ -35,7 +35,7 @@
 
 ### Wymagania funkcjonalne + kryteria akceptacji
 
-> - Gracz musi mieć możliwość poruszania się w prawo, lewo, skakania lub kucania, aby unikać nadchodzących przeszkód.
+> - Gracz musi mieć możliwość poruszania się w prawo, lewo lub skakania, aby unikać nadchodzących przeszkód.
 > - Gracz musi móc zbierać pigułki zwiększające liczbę żyć i amunicję.
 > - Gracz ma możliwość niszczenia przeszkód poprzez użycie broni.
 > - Przeszkody i przedmioty muszą być generowane w sposób losowy.
